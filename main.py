@@ -1,5 +1,4 @@
-import os
-import json
+import os, json
 import unicodedata
 from time import sleep
 from dotenv import load_dotenv
@@ -48,7 +47,7 @@ def get_judol_comment(text):
     normalized_text = unicodedata.normalize("NFKD", text)
     if text != normalized_text:
         return True
-    # Baca daftar kata-kata terblokir dari file blockedword.json
+    # Baca daftar kata-kata terblokir dari file src/blockedword.json
     with open("src/blockedword.json", "r") as f:
         blocked_words = json.load(f)
     lower_text = text.lower()
@@ -71,7 +70,7 @@ def fetch_comments(creds, video_id):
             comment = item["snippet"]["topLevelComment"]["snippet"]
             comment_text = comment["textDisplay"]
             comment_id = item["id"]
-            print(f'Checking comment: "{comment_text}"')
+            print(f'ngecek komentar: "{comment_text}"')
             if get_judol_comment(comment_text):
                 print(f'🚨 Spam terdeteksi!: "{comment_text}"')
                 spam_comments.append(comment_id)
@@ -137,7 +136,7 @@ def youtube_content_list(creds):
             if not next_page_token:
                 break
     except Exception as error:
-        print("Error fetching videos:", error)
+        print("Terjadi kesalahan saat mengambil video:", error)
     return all_videos
 
 def main():
