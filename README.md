@@ -46,10 +46,15 @@ Pastikan file-file berikut tersedia di direktori proyek:
 
   8. **Edit File .env**
 
-- Buka file .env dan atur variabel YOUTUBE_CHANNEL_ID sesuai dengan ID channel YouTube Anda:
+- Buka file `.env` dan atur variabel YOUTUBE_CHANNEL_ID sesuai dengan ID channel YouTube Anda:
 ```
 YOUTUBE_CHANNEL_ID=ID_CHANNEL_ANDA
+
 ```
+> [!NOTE]  
+> Channel ID dapat ditemukan pada laman: https://www.youtube.com/account_advanced
+
+
 
 9. **Jalankan Aplikasi**
 Setelah semua pengaturan selesai, jalankan aplikasi dengan perintah:
@@ -60,6 +65,7 @@ python main.py
 
 # Struktur Proyek
 
+```
 JudolSlayerPY/
 ├── .env                  # File konfigurasi lingkungan
 ├── src/blockedword.json      # Daftar kata-kata terlarang(judol)
@@ -68,7 +74,7 @@ JudolSlayerPY/
 ├── requirements.txt      # Daftar dependensi Python
 └── main.py               # File utama aplikasi
 
-
+```
 
 # Catatan Tambahan
 Pastikan akun Google Anda memiliki akses ke channel YouTube yang akan dianalisis.
